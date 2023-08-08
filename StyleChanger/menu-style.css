@@ -1,0 +1,371 @@
+:root {
+  --main-background-color: #ebedf2;
+  --main-border-color: #acb0f2;
+  --main-button-color: #4b50bf;
+  --main-hover-color: #231773;
+  --main-header_footer-color: #6e30f2;
+  --mainPadding: 10px;
+}
+.mainMenu {
+  box-sizing: border-box;
+  width: 320px;
+  background: var(--main-background-color);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px 10px 10px;
+  position: fixed;
+  z-index: 10000001;
+  right: 10px;
+  top: 10px;
+  border: 1px solid var(--main-button-color);
+}
+.mainMenu #hideMenu {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 20px;
+  color: var(--main-button-color);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.mainMenu #hideMenu:hover {
+  color: var(--main-hover-color);
+  font-size: 21px;
+  font-weight: bold;
+}
+/* general style for btns */
+
+.mainMenu input[type="button"] {
+  border: none;
+  outline: none;
+  background-color: var(--main-button-color);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.mainMenu input[type="button"]:hover {
+  background-color: var(--main-hover-color);
+}
+.mainMenu .deleteBtn {
+  position: relative;
+  width: 100%;
+  flex-basis: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.mainMenu .deleteBtn::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-hover-color);
+}
+.mainMenu .deleteBtn input {
+  height: 100%;
+  width: 61%;
+}
+.mainMenu .text1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.mainMenu .text1 h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 26px;
+  letter-spacing: 1px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 16px 0;
+  grid-gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.mainMenu .text1 h2:after,
+.mainMenu .text1 h2:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid var(--main-hover-color);
+}
+
+/* style for select tags */
+.mainMenu select {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  padding: 0 16px 0 6px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+      no-repeat right 0.2em center / 1em,
+    linear-gradient(
+      to left,
+      var(--main-border-color) 2em,
+      var(--main-button-color) 2em
+    );
+  color: white;
+  border-radius: 2px;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  /* Remove focus outline */
+}
+/* <option> colors */
+.mainMenu option {
+  color: black;
+}
+.mainMenu select:focus {
+  outline: none;
+}
+/* Remove IE arrow */
+.mainMenu select::-ms-expand {
+  display: none;
+}
+
+.mainMenu .font-family {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainMenu .font-family label {
+  height: 100%;
+}
+.mainMenu .font-family select {
+  flex: 1;
+  height: 25px;
+}
+
+.mainMenu .font-size {
+  display: flex;
+  gap: 27px;
+  align-items: center;
+}
+.mainMenu .font-size label {
+  height: 100%;
+}
+.mainMenu .font-size select {
+  flex: 1;
+  height: 25px;
+}
+
+.mainMenu .font-weight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainMenu .font-weight label {
+  height: 100%;
+}
+.mainMenu .font-weight .buttonsGroup {
+  display: flex;
+  flex: 1;
+  gap: 10px;
+}
+.mainMenu .font-weight input {
+  height: 25px;
+  flex: 1;
+}
+
+.mainMenu .font-style {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  width: 100%;
+}
+.mainMenu .font-style label {
+  height: 100%;
+}
+.mainMenu .font-style .buttonsGroup {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  gap: 5px;
+}
+.mainMenu .font-style input {
+  height: 25px;
+  flex: 1;
+}
+
+/* general style for input type number */
+.mainMenu .input_number {
+  position: relative;
+}
+.mainMenu input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.mainMenu input[type="number"] {
+  border: 1px solid #ccc;
+  padding: 7px 14px 9px;
+  transition: 0.4s;
+  color: #333;
+  width: 100%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  outline: none;
+}
+.mainMenu input[type="number"] ~ .focus-border:before,
+.mainMenu input[type="number"] ~ .focus-border:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--main-button-color);
+  transition: 0.3s;
+}
+.mainMenu input[type="number"] ~ .focus-border:after {
+  top: auto;
+  bottom: 0;
+  left: auto;
+  right: 0;
+}
+.mainMenu input[type="number"] ~ .focus-border i:before,
+.mainMenu input[type="number"] ~ .focus-border i:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background-color: var(--main-button-color);
+  transition: 0.4s;
+}
+.mainMenu input[type="number"] ~ .focus-border i:after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+.mainMenu input[type="number"]:focus ~ .focus-border:before,
+.mainMenu input[type="number"]:focus ~ .focus-border:after {
+  width: 100%;
+  transition: 0.3s;
+}
+.mainMenu input[type="number"]:focus ~ .focus-border i:before,
+.mainMenu input[type="number"]:focus ~ .focus-border i:after {
+  height: 100%;
+  transition: 0.4s;
+}
+
+.mainMenu .line-height {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainMenu .line-height label {
+  height: 100%;
+}
+.mainMenu .line-height .input_number {
+  flex: 1;
+}
+
+.mainMenu .letter-spacing {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainMenu .letter-spacing label {
+  height: 100%;
+}
+.mainMenu .letter-spacing .input_number {
+  flex: 1;
+}
+.mainMenu .color-and-background {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.mainMenu .color-and-background h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 26px;
+  letter-spacing: 1px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 16px 0;
+  grid-gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.mainMenu .color-and-background h2:after,
+.mainMenu .color-and-background h2:before {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid var(--main-hover-color);
+}
+
+/* color input style  */
+.mainMenu input[type="color"] {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.mainMenu input[type="color"]:focus {
+  border-radius: 0;
+  outline: none;
+}
+
+.mainMenu ::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.mainMenu ::-webkit-color-swatch {
+  border: 0;
+  border-radius: 0;
+}
+
+.mainMenu ::-moz-color-swatch,
+.mainMenu ::-moz-focus-inner {
+  border: 0;
+}
+
+.mainMenu ::-moz-focus-inner {
+  padding: 0;
+}
+
+.mainMenu .background-color {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainMenu .background-color label {
+  height: 100%;
+}
+.mainMenu .background-color input {
+  width: 60px;
+}
+
+.mainMenu .colorize {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainMenu .colorize label {
+  height: 100%;
+}
+.mainMenu .colorize input {
+  width: 60px;
+}
+.mainMenu label {
+  font-size: 16px !important;
+}

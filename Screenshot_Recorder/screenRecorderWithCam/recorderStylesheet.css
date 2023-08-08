@@ -1,0 +1,23 @@
+.header {
+  background-color: #6e30f2;
+}
+.video-cam {
+  position: absolute;
+  top: 362px;
+  right: 80px;
+}
+#media-area {
+  display: flex;
+  flex: 1 1 100%;
+  flex-basis: row nowrap;
+}
+#media-area video {
+  border: 1px solid black;
+  margin: 1px;
+  max-width: 33%;
+  height: auto;
+}
+
+#media-area video#pipOverlayStream {
+  max-width: 100% !important;
+}

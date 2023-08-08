@@ -1,0 +1,57 @@
+﻿{
+  "name": "Purple Antares",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Purple Antares",
+  "permissions": ["identity","identity.email","scripting","storage","tabs","alarms","desktopCapture",
+        "activeTab",
+        "downloads","contextMenus"],
+  "background": {
+    "service_worker": "js/background.js"
+  },"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA80QsMxtmuEDh7DP1oyULAPQbxihyka7K/ay3+TBf2OL95V+U7QBIq2kZdsRrOjBHK53MqjAVg/Zd05dvVGQf9v4vtArWmAHMsqHEnN0p56symIOGq3xdt89+odJN3Tv2caWYD+3ZvxD4o++wTRdHyMUVfc2GzItcVWwjHOKwpb94QrwaHrNz6uqqH9aY2Hbj+7+RVqhPAgik+svAA52ChV5Vpac01KMBoE3NDubV8nfx/8tdYLDIKs8yvycNy1eQbjUwbYqxzb3ChLRkHI3C/tcBPPU7Zf3UpGlxuVDsSgoK8wrK1Z4R+72rLyRcqeXRYcN42V2wSHXORdindbEtawIDAQAB",
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "action": {
+    "default_title": "Purple Antares",
+    "default_popup": "index.html"
+  },"icons": { 
+    "16": "./icons/StoreLogo.scale-71.png",
+    "48": "./icons/StoreLogo.scale-150.png",
+    "128": "./icons/StoreLogo.scale-300.png"
+  },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+              "./StyleChanger/jquery-3.6.0.min.js",
+                "./Translator/content.js",
+                "./StyleChanger/menu.js"
+            ], 
+            "css": [
+              "./StyleChanger/menu-style.css"
+            ]
+        }
+    ],
+    "commands": {
+        "copy": {
+            "suggested_key": {
+                "default": "Alt+Comma"
+            },
+            "description": "Copy translation"
+        },
+        "_execute_action": {
+            "suggested_key": {
+                "default": "Alt+Y"
+            },
+            "description": "Open translator menu"
+        }
+    },
+    "web_accessible_resources": [{
+        "resources": [ "icons/icon","./StyleChanger/jquery-3.6.0.min.js" ],
+        "matches": [ "<all_urls>" ]
+      }]
+}

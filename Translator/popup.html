@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' href='popup.css'>
+  <link rel='stylesheet/less' href='styleimput.scss'>
+</head>
+
+<body class='glass-ui'>
+  <div id='left-side'>
+    <div></div>
+      <img src='./icons/shape2.png' wdith="246.8px" height="119px">
+      <p></p>
+      <div class="settings">
+    <div class="backrev">
+      <div>
+        <button id='reverse'>
+          <img src='icons/reverse-button.svg'>
+        </button>
+      </div>
+      
+
+      <div class="back_button" id="back_button">
+        <a href="../MainPage/index.html" class="arrow" id="arrow" title="Retuen to Extension Menu">
+            <i class="arrow_left"></i>Back</a>
+     </div>
+    </div>
+    <select class='source-lang-dropdown' title='Choose source language' id='source-langs'>
+      <option value='auto'>AutoDetection</option>
+    </select>
+
+    <p></p>
+    <select class='target-lang-dropdown' title='Choose target language' id='target-langs'></select><br>
+
+    
+    
+  </div>
+  <!--!New Edit For Checkbox -->
+      <!-- <div class="keyfield"> !New Edit For Checkbox -->
+         <!-- <span class='key' title="Change Shourtcut key">Shourtcut Key:</span><br> -->
+      <!-- <input id='live-key-input' class="keys" title="Shourtcut key" placeholder='Enter a Shourcut key'>
+      <button id="setButton" class="setKey" title="Save New ShortcutKey" >set</button>
+      </div> -->
+      
+
+   <p></p>
+   
+    <div class="transbuttons">
+      <div class="icons">
+        <button title='Speak the text' id="speaker1">
+          <img src='icons/speaker_img.svg'>
+        </button>
+
+        <button title='speak the translation' id="speaker2">
+          <img src='icons/speaker_img.svg'>
+        </button>
+        <!--!New Edit For Checkbox -->
+        <input type="checkbox" class="check" id="_checkbox" title="Enable or Disable The Bubble"><label for="_checkbox" id="_bubbletext" class ="bubbletext" title="Enable or Disable The Bubble">Show Bubble?</label>
+      </div>
+      
+    
+    <p></p>
+    <input id='live-translation-input' title="use mousewheel to decrease/increase font" spellcheck='false'
+      placeholder='Enter to translate'>
+    </div>
+    <p></p>
+    <p></p>
+    <div id='detected-language'></div>
+    <label id='live-translation' >...</label><br><br>
+  </div>
+  <div style="overflow-y: auto;" id='right-side'>
+    <div class="searchbuttons">
+    <button id='google-link' title='Search By Google'>
+      <img src="icons/google.svg">
+    </button>
+    <button id='youtube-link' title='Search By Youtube'>
+      <img src="icons/youtube.svg">
+    </button>
+    <button id='google-translate-link' title='Translate by Google Translate'>
+      <img src="icons/google-translate.svg">
+    </button>
+    <button id='github-link' title='Search By Github'>
+      <img src="icons/github.svg">
+    </button>
+  </div>
+    <div class="dic">
+    <div class='dictionary-container'>
+      <div class='dictionary-container-row'>
+        <div class='dictionary-container-row-title'>synonyms</div>
+        <div class='dictionary-container-row-item'> Example
+        </div>
+      </div>
+      <div class='dictionary-container-row'>
+        <div class='dictionary-container-row-title'>definition</div>
+        <div class='dictionary-container-row-item'> Example
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    <script type='text/javascript' src='default_popup.js'></script>
+    <script type='text/javascript' src='popup.js'></script>
+  </div>
+</body>
+
+</html>
